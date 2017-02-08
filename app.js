@@ -2,21 +2,23 @@ import './index.html';
 import './components/commonStyles';
 import './components/article';
 import './components/articleList';
-import './components/newArticleForm';
+import './components/editArticleForm';
 import './components/pageButtons';
 import './directives/customOnChange';
 import './directives/customLengthCheck';
 import './filters/pagination';
+import './commonServices/articleService';
 
 angular
     .module('app', [
         'app.article',
         'app.articleList',
-        'app.newArticleForm',
+        'app.editArticleForm',
         'app.pageButtons',
         'app.customOnChange',
         'app.customLengthCheck',
         'app.customPagination',
+        'app.articleService',
         'ui.router',
     ])
     .config(($stateProvider, $httpProvider) => {
@@ -29,7 +31,12 @@ angular
             .state({
                 name: 'add',
                 url: '/add',
-                template: '<new-article-form></new-article-form>'
+                template: '<edit-article-form></edit-article-form>'
+            })
+            .state({
+                name: 'edit',
+                url: 'edit/:id',
+                template: '<edit-article-form></edit-article-form>'
             });
             
         $httpProvider.defaults.useXDomain = true;

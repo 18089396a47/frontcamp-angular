@@ -2,14 +2,8 @@
 <a ui-sref="add">Add</a>
 <page-buttons page="$ctrl.page" length="$ctrl.articles.length"></page-buttons>
 <ul>
-    <li ng-repeat="article in $ctrl.articles | customPagination: $ctrl.currentPage() | limitTo: 5">
-        <article
-            title="{{article.title}}"
-            content="{{article.content}}"
-            image="{{article.image}}"
-            author="{{article.author}}"
-            date="article.date"
-        ></article>
+    <li ng-repeat="currentArticle in $ctrl.articles | customPagination: $ctrl.currentPage() | limitTo: 5 track by currentArticle._id">
+        <article article="currentArticle"></article>
         <hr />
     </li>
 </ul>

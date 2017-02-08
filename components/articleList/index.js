@@ -4,8 +4,10 @@ import template from './articleList.html';
 
 class controller {
     constructor(articleListService) {
-        articleListService.getArticles().then((articles) => {this.articles = articles.data});
+        this.articles = [];
         this.page = 0;
+        
+        articleListService.getArticles().then((articles) => {this.articles = articles.data});
     }
     
     currentPage(page) {

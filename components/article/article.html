@@ -1,5 +1,6 @@
-<h2 ng-bind="$ctrl.title"></h2>
-<img ng-src="{{$ctrl.host.name}}{{$ctrl.host.getImage}}/{{$ctrl.image}}">
-<p ng-bind="$ctrl.content"></p>
-<h5 ng-bind="$ctrl.author"></h5>
-<p ng-bind="$ctrl.date.toLocaleString()"></p>
+<h2 ng-bind="$ctrl.article.title"></h2>
+<img ng-src="{{$ctrl.host.name}}{{$ctrl.host.getImage}}/{{$ctrl.article.image}}">
+<p ng-bind="$ctrl.article.content"></p>
+<h5 ng-bind="$ctrl.article.author"></h5>
+<p ng-bind="$ctrl.article.date.toLocaleString()"></p>
+<a ui-sref="edit({id: $ctrl.article._id})" ng-click="$ctrl.setArticle()">edit</a>
