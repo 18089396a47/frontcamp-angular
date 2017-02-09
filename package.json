@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "webpack-dev-server --inline --hot --history-api-fallback --open --port 8080",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "karma start"
   },
   "repository": {
     "type": "git",
@@ -18,9 +18,21 @@
   },
   "homepage": "https://github.com/18089396a47/frontcamp-angular#readme",
   "devDependencies": {
+    "angular-mocks": "^1.6.2",
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-istanbul": "^4.0.0",
+    "babel-preset-es2015": "^6.22.0",
     "css-loader": "^0.26.1",
     "file-loader": "^0.10.0",
+    "jasmine-core": "^2.5.2",
     "json-loader": "^0.5.4",
+    "karma": "^1.4.1",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-coverage": "^1.1.1",
+    "karma-jasmine": "^1.1.0",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^2.0.2",
     "raw-loader": "^0.5.1",
     "style-loader": "^0.13.1",
     "stylus": "^0.54.5",
