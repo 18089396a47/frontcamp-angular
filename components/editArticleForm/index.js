@@ -2,7 +2,7 @@ import './editArticleForm.styl';
 import './editArticleFormService';
 import template from './editArticleForm.html';
 
-class controller {
+class EditArticleForm {
     constructor($scope, $element, $state, $stateParams, editArticleFormService, articleService) {
         this.editArticleFormService = editArticleFormService;
         this.$scope = $scope;
@@ -43,7 +43,7 @@ class controller {
 
 const bindings = {};
 const require = {};
-const component = { bindings, template, controller, require };
+const component = { bindings, template, controller: EditArticleForm, require };
 
 angular
     .module('app.editArticleForm', [

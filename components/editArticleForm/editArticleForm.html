@@ -8,13 +8,14 @@
         <textarea type="text" name="content" class="field-input content" ng-model="$ctrl.article.content" ng-required="true" custom-length-check="20"></textarea>
         <h3 class="field-name">Author:</h3>
         <input type="text" name="author" class="field-input" ng-model="$ctrl.article.author">
+        
         <div ng-if="$ctrl.isEdit">
             <input type="submit" value="Update" class="submmit-button">
             <a ui-sref="index" class="submmit-button">Cancel</a>
         </div>
         <div ng-if="!$ctrl.isEdit">
             <h3 class="field-name image">Image:</h3>
-            <input type="file" name="image" accept="image/x-png,image/gif,image/jpeg" custom-on-change="$ctrl.handleChange" class="field-input image">
+            <input type="file" name="image" accept="image/x-png,image/gif,image/jpeg" custom-on-change="$ctrl.handleChange(event)" class="field-input image">
             <img ng-src="{{$ctrl.imagePreview}}" class="image-preview" ng-if="$ctrl.imagePreview">
             <input type="submit" value="Add" class="submmit-button">
         </div>

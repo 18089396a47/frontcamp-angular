@@ -1,13 +1,13 @@
 import HOST from '../../constants/host';
 import template from './article.html';
 
-class controller {
+class Article {
     constructor(articleService) {
         this.articleService = articleService;
         
         this.host = {
             name: HOST.NAME,
-            getImage: HOST.GET_IMAGE
+            getImage: HOST.IMAGE_PATH
         };
     }
     
@@ -20,7 +20,7 @@ const bindings = {
     article: '<'
 };
 const require = {};
-const component = { bindings, template, controller, require };
+const component = { bindings, template, controller: Article, require };
 
 angular
     .module('app.article', [])

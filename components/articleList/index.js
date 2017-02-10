@@ -2,7 +2,7 @@ import './articleListService';
 import HOST from '../../constants/host';
 import template from './articleList.html';
 
-class controller {
+class artcleList {
     constructor(articleListService) {
         this.articles = [];
         this.page = 0;
@@ -21,7 +21,7 @@ class controller {
 
 const bindings = {};
 const require = {};
-const component = { bindings, template, controller, require };
+const component = { bindings, template, controller: artcleList, require };
 
 angular
     .module('app.articleList', [

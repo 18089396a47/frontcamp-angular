@@ -12,7 +12,7 @@ function service($http) {
         },
         update(body, id) {
             return $http({
-                method: 'POST',
+                method: 'PUT',
                 url: `${HOST.NAME}${HOST.EDIT_ARTICLE}${id}`,
                 data: body,
                 headers: {'Content-Type': undefined}

@@ -12,12 +12,12 @@ angular
             link(scope, elem, attr, ngModel) {
                 var length = attr.customLengthCheck;
                 
-                ngModel.$parsers.unshift((value) => {
+                ngModel.$parsers.push((value) => {
                     ngModel.$setValidity('customLengthCheck', isValid(value, length));
                     return value;
                 });
 
-                ngModel.$formatters.unshift(function(value) {
+                ngModel.$formatters.push((value) => {
                     ngModel.$setValidity('customLengthCheck', isValid(value, length));
                     return value;
                 });
